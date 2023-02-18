@@ -13,8 +13,6 @@ import xyz.doikki.videoplayer.player.VideoViewManager
 import java.lang.Exception
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import com.umeng.analytics.MobclickAgent
-import com.umeng.commonsdk.UMConfigure
 import xyz.doikki.videoplayer.exo.ExoMediaPlayerFactory
 
 class SunnyWeatherApplication : Application() {
@@ -39,7 +37,6 @@ class SunnyWeatherApplication : Application() {
             sharedPref.edit().remove("username").remove("password").commit()
             userInfo = null
             isLogin.value = false
-            MobclickAgent.onProfileSignOff()//友盟账号退出
             Toast.makeText(context, "已退出", Toast.LENGTH_SHORT).show()
         }
         fun saveLoginInfo(activity: Activity, username: String, password: String) {
@@ -98,8 +95,6 @@ class SunnyWeatherApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        UMConfigure.preInit(this, "6159ddaf14e22b6a4f146772", "QQ群")
-        UMConfigure.init(this,"6159ddaf14e22b6a4f146772","QQ群",UMConfigure.DEVICE_TYPE_PHONE, "")
         context = applicationContext
         BRV.modelId = BR.areaFollow
         VideoViewManager.setConfig(
