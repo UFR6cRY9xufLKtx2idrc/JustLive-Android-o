@@ -34,7 +34,6 @@ import com.sunnyweather.android.ui.login.LoginActivity
 import com.sunnyweather.android.ui.login.LoginViewModel
 import com.sunnyweather.android.ui.search.SearchActivity
 import com.sunnyweather.android.ui.setting.SettingActivity
-import com.umeng.analytics.MobclickAgent
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_update.*
 import com.sunnyweather.android.ui.about.AboutActvity
@@ -380,7 +379,6 @@ class MainActivity : AppCompatActivity(), AreaSingleFragment.FragmentListener {
         viewModel.loginResponseLiveDate.observe(this, { result ->
             val userInfo = result.getOrNull()
             if (userInfo is UserInfo) {
-                MobclickAgent.onProfileSignIn(userInfo.userName)//友盟账号登录
                 SunnyWeatherApplication.userInfo = userInfo
                 SunnyWeatherApplication.isLogin.value = true
             } else if(userInfo is String){
