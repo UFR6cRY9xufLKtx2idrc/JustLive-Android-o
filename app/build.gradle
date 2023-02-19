@@ -32,7 +32,9 @@ android {
         }
         debug {
             debuggable true
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
         }
     }
     compileOptions {
