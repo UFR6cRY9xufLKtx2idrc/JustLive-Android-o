@@ -19,7 +19,7 @@ class SearchAdapter(private val activity: SearchActivity, private val ownerList:
     RecyclerView.Adapter<SearchAdapter.ViewHolder>(){
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val ownerPic: ImageView = view.findViewById(R.id.profileImageIv)
+        var ownerPic: ImageView = view.findViewById(R.id.profileImageIv)
         val liveState: TextView = view.findViewById(R.id.liveState)
         val ownerName: TextView = view.findViewById(R.id.usernameTv)
         val follows: TextView = view.findViewById(R.id.fullNameTv)
@@ -44,7 +44,10 @@ class SearchAdapter(private val activity: SearchActivity, private val ownerList:
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ownerInfo = ownerList[position]
-        if (ownerInfo.platform == "bilibili") ownerInfo.headPic = "http:" +  ownerInfo.headPic
+        if((roomInfo.headPic)?.startsWith("http://") == true){
+            (roomInfo.headPic) = (roomInfo.headPic).replaceFirst("http://", "https://")
+        }
+        if (ownerInfo.platform == "bilibili") ownerInfo.headPic = "https:" +  ownerInfo.headPic
         Glide.with(activity).load(ownerInfo.headPic).transition(DrawableTransitionOptions.withCrossFade()).into(holder.ownerPic)
         if(ownerInfo.isLive == "1")  holder.liveState.visibility = View.VISIBLE
         holder.platform.text = SunnyWeatherApplication.platformName(ownerInfo.platform) + "·"
