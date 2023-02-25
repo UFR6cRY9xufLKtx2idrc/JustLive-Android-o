@@ -360,7 +360,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             changeRoomInfoVisible(roomInfo_liveRoom.layoutParams.height == 0)
                         }
                     } else {
-                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView<ExoMediaPlayer>?
+                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
                         if (mPIPManager.isStartFloatWindow) {
                             mPIPManager.stopFloatWindow()
 //                            controller?.setPlayerState(videoView!!.currentPlayerState)
