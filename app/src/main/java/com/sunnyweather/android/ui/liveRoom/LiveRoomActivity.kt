@@ -68,6 +68,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private var controller: YJstandardController? = null
     private var videoView: VideoView? = null
     private var playerUrl: String = ""
+    private var rawUrl: String = ""
     private lateinit var mMyDanmakuView: MyDanmakuView
     private lateinit var danmuSetting: DanmuSetting
     private lateinit var sharedPref: SharedPreferences
@@ -270,14 +271,22 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     val defaultDefinition = sharedPreferences.getString("default_definition_4G", "原画")
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        playerUrl = urls[defaultDefinition]!!
-                        videoView?.setUrl(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        playerUrl = rawUrl!!
+                        videoView?.setUrl(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                playerUrl = urls[item]!!
-                                videoView?.setUrl(urls[item]) //设置视频地址
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                playerUrl = rawUrl!!
+                                videoView?.setUrl(rawUrl) //设置视频地址
                                 break
                             }
                         }
@@ -287,14 +296,22 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        playerUrl = urls[defaultDefinition]!!
-                        videoView?.setUrl(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        playerUrl = rawUrl!!
+                        videoView?.setUrl(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                playerUrl = urls[item]!!
-                                videoView?.setUrl(urls[item]) //设置视频地址
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                playerUrl = rawUrl!!
+                                videoView?.setUrl(rawUrl) //设置视频地址
                                 break
                             }
                         }
@@ -503,8 +520,12 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
         if (url != null) {
             Log.i("test", url)
         }
-        playerUrl = url!!
-        videoView?.setUrl(url)
+        rawUrl = url
+        if(rawUrl?.startsWith("http://") == true){
+            rawUrl = rawUrl.replaceFirst("http://", "https://")
+        }
+        playerUrl = rawUrl!!
+        videoView?.setUrl(rawUrl)
         videoView?.replay(true)
     }
 
@@ -727,12 +748,20 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     val defaultDefinition = sharedPreferences.getString("default_definition_4G", "原画")
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        onRateChange(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        onRateChange(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                onRateChange(urls[item]) //设置视频地址
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                onRateChange(rawUrl) //设置视频地址
                                 break
                             }
                         }
@@ -741,12 +770,20 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     val defaultDefinition = sharedPreferences.getString("default_definition_wifi", "原画")
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        onRateChange(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        onRateChange(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                onRateChange(urls[item])
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                onRateChange(rawUrl) //设置视频地址
                                 break
                             }
                         }
@@ -769,12 +806,20 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     val defaultDefinition = sharedPreferences.getString("default_definition_4G", "原画")
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        onRateChange(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        onRateChange(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                onRateChange(urls[item]) //设置视频地址
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                onRateChange(rawUrl) //设置视频地址
                                 break
                             }
                         }
@@ -783,12 +828,20 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     val defaultDefinition = sharedPreferences.getString("default_definition_wifi", "原画")
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
-                        onRateChange(urls[defaultDefinition]) //设置视频地址
+                        rawUrl = urls[defaultDefinition]
+                        if(rawUrl?.startsWith("http://") == true){
+                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        }
+                        onRateChange(rawUrl) //设置视频地址
                     } else {
                         for (item in definitionArray) {
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
-                                onRateChange(urls[item])
+                                rawUrl = urls[item]
+                                if(rawUrl?.startsWith("http://") == true){
+                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                }
+                                onRateChange(rawUrl) //设置视频地址
                                 break
                             }
                         }
