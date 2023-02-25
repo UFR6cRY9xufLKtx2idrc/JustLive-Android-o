@@ -54,7 +54,7 @@ class AreaListAdapter(private val fragment: AreaSingleFragment, private val area
         if((areaInfo.areaPic)?.startsWith("http://") == true){
             (areaInfo.areaPic) = (areaInfo.areaPic).replaceFirst("http://", "https://")
         }
-        Glide.with(fragment).load(areaInfo.getString("areaPic")).transition(DrawableTransitionOptions.withCrossFade()).into(holder.areaPic)
+        Glide.with(fragment).load(areaInfo.areaPic).transition(DrawableTransitionOptions.withCrossFade()).into(holder.areaPic)
     }
 
     override fun getItemCount(): Int {
