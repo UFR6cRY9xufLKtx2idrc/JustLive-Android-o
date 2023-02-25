@@ -66,7 +66,6 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private lateinit var mPIPManager: PIPManager
     private var danmuShow = true
     private var controller: YJstandardController? = null
-    private var videoView: VideoView<ExoMediaPlayer>? = null
     private var playerUrl: String = ""
     private lateinit var mMyDanmakuView: MyDanmakuView
     private lateinit var danmuSetting: DanmuSetting
