@@ -394,6 +394,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             viewModel.getRealUrl(platform, roomId)
                         }
                     }
+                    if((roomInfo.ownerHeadPic)?.startsWith("http://") == true){
+                        (roomInfo.ownerHeadPic) = (roomInfo.ownerHeadPic).replaceFirst("http://", "https://")
+                    }
                     Glide.with(this).load(roomInfo.ownerHeadPic).transition(
                         DrawableTransitionOptions.withCrossFade()
                     ).into(ownerPic_roomInfo)
@@ -736,7 +739,11 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
             val data = Get<String>(url) // 发起GET请求并返回`String`类型数据
             val realUrlData = Get<String>(realUrl)
             var result: JSONObject = JSONObject.parseObject(data.await()).getJSONObject("data")
-            Glide.with(context).load(result.getString("ownerHeadPic")).transition(
+            var ownerHeadPic = result.getString("ownerHeadPic")
+            if(ownerHeadPic?.startsWith("http://") == true){
+                ownerHeadPic = ownerHeadPic.replaceFirst("http://", "https://")
+            }
+            Glide.with(context).load(ownerHeadPic).transition(
                 DrawableTransitionOptions.withCrossFade()
             ).into(ownerPic_roomInfo)
             ownerName_roomInfo.text = SunnyWeatherApplication.platformName(result.getString("platForm"))
