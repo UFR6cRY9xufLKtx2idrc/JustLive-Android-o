@@ -19,7 +19,7 @@ class AreaListAdapter(private val fragment: AreaSingleFragment, private val area
     RecyclerView.Adapter<AreaListAdapter.ViewHolder>(){
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val areaPic: ImageView = view.findViewById(R.id.areaPic)
+        var areaPic: ImageView = view.findViewById(R.id.areaPic)
         val areaName: TextView = view.findViewById(R.id.areaName)
     }
 
@@ -51,6 +51,9 @@ class AreaListAdapter(private val fragment: AreaSingleFragment, private val area
     override fun onBindViewHolder(holder: AreaListAdapter.ViewHolder, position: Int) {
         val areaInfo = areaList[position]
         holder.areaName.text = areaInfo.getString("areaName")
+        if((areaInfo.areaPic)?.startsWith("http://") == true){
+            (areaInfo.areaPic) = (areaInfo.areaPic).replaceFirst("http://", "https://")
+        }
         Glide.with(fragment).load(areaInfo.getString("areaPic")).transition(DrawableTransitionOptions.withCrossFade()).into(holder.areaPic)
     }
 
