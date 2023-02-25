@@ -44,8 +44,8 @@ class SearchAdapter(private val activity: SearchActivity, private val ownerList:
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ownerInfo = ownerList[position]
-        if((roomInfo.headPic)?.startsWith("http://") == true){
-            (roomInfo.headPic) = (roomInfo.headPic).replaceFirst("http://", "https://")
+        if((ownerInfo.headPic)?.startsWith("http://") == true){
+            (ownerInfo.headPic) = (ownerInfo.headPic).replaceFirst("http://", "https://")
         }
         if (ownerInfo.platform == "bilibili") ownerInfo.headPic = "https:" +  ownerInfo.headPic
         Glide.with(activity).load(ownerInfo.headPic).transition(DrawableTransitionOptions.withCrossFade()).into(holder.ownerPic)
