@@ -66,7 +66,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private lateinit var mPIPManager: PIPManager
     private var danmuShow = true
     private var controller: YJstandardController? = null
-    private var videoView: VideoView<ExoMediaPlayer>? = null
+    private var videoView: VideoView? = null
     private var playerUrl: String = ""
     private lateinit var mMyDanmakuView: MyDanmakuView
     private lateinit var danmuSetting: DanmuSetting
@@ -360,7 +360,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             changeRoomInfoVisible(roomInfo_liveRoom.layoutParams.height == 0)
                         }
                     } else {
-                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView<ExoMediaPlayer>?
+                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
                         if (mPIPManager.isStartFloatWindow) {
                             mPIPManager.stopFloatWindow()
 //                            controller?.setPlayerState(videoView!!.currentPlayerState)
