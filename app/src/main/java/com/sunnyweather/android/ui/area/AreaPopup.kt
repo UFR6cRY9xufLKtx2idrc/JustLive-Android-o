@@ -69,7 +69,11 @@ class AreaPopup(context: Context) : BottomPopupView(context), View.OnClickListen
             addType<AreaInfo>(R.layout.area_item)
             onBind {
                 findView<TextView>(R.id.areaName).text = getModel<AreaInfo>().areaName
-                Glide.with(context).load(getModel<AreaInfo>().areaPic)
+                var areaPic = getModel<AreaInfo>().areaPic
+                if(areaPic?.startsWith("http://") == true){
+                    areaPic = areaPic.replaceFirst("http://", "https://")
+                }
+                Glide.with(context).load(areaPic)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(findView(R.id.areaPic))
             }
