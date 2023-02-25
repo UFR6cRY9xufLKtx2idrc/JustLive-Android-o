@@ -272,8 +272,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         playerUrl = rawUrl!!
                         videoView?.setUrl(rawUrl) //设置视频地址
@@ -282,8 +283,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 playerUrl = rawUrl!!
                                 videoView?.setUrl(rawUrl) //设置视频地址
@@ -297,8 +299,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         playerUrl = rawUrl!!
                         videoView?.setUrl(rawUrl) //设置视频地址
@@ -307,8 +310,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 playerUrl = rawUrl!!
                                 videoView?.setUrl(rawUrl) //设置视频地址
@@ -521,8 +525,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
             Log.i("test", url)
         }
         rawUrl = url
-        if(rawUrl?.startsWith("http://") == true){
-            rawUrl = rawUrl.replaceFirst("http://", "https://")
+        val rawUrl2 = rawUrl
+        if(rawUrl2?.startsWith("http://") == true){
+            rawUrl = rawUrl2.replaceFirst("http://", "https://")
         }
         playerUrl = rawUrl!!
         videoView?.setUrl(rawUrl)
@@ -749,8 +754,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         onRateChange(rawUrl) //设置视频地址
                     } else {
@@ -758,8 +764,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 onRateChange(rawUrl) //设置视频地址
                                 break
@@ -771,8 +778,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         onRateChange(rawUrl) //设置视频地址
                     } else {
@@ -780,8 +788,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 onRateChange(rawUrl) //设置视频地址
                                 break
@@ -807,8 +816,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         onRateChange(rawUrl) //设置视频地址
                     } else {
@@ -816,8 +826,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 onRateChange(rawUrl) //设置视频地址
                                 break
@@ -829,8 +840,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     if (urls.containsKey(defaultDefinition)) {
                         mDefinitionControlView?.setData(urls, defaultDefinition)
                         rawUrl = urls[defaultDefinition]
-                        if(rawUrl?.startsWith("http://") == true){
-                            rawUrl = rawUrl.replaceFirst("http://", "https://")
+                        val rawUrl2 = rawUrl
+                        if(rawUrl2?.startsWith("http://") == true){
+                            rawUrl = rawUrl2.replaceFirst("http://", "https://")
                         }
                         onRateChange(rawUrl) //设置视频地址
                     } else {
@@ -838,8 +850,9 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             if (urls.containsKey(item)) {
                                 mDefinitionControlView?.setData(urls, item)
                                 rawUrl = urls[item]
-                                if(rawUrl?.startsWith("http://") == true){
-                                    rawUrl = rawUrl.replaceFirst("http://", "https://")
+                                val rawUrl2 = rawUrl
+                                if(rawUrl2?.startsWith("http://") == true){
+                                    rawUrl = rawUrl2.replaceFirst("http://", "https://")
                                 }
                                 onRateChange(rawUrl) //设置视频地址
                                 break
