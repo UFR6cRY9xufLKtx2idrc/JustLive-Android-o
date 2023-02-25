@@ -24,8 +24,8 @@ class RoomListAdapter(private val fragment: Fragment, private val roomList: Arra
     RecyclerView.Adapter<RoomListAdapter.ViewHolder>(), LoadMoreModule{
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val roomPic: ImageView = view.findViewById(R.id.roomPic)
-        val ownerPic: ImageView = view.findViewById(R.id.ownerPic)
+        var roomPic: ImageView = view.findViewById(R.id.roomPic)
+        var ownerPic: ImageView = view.findViewById(R.id.ownerPic)
         val ownerName: TextView = view.findViewById(R.id.ownerName)
         val roomName: TextView = view.findViewById(R.id.roomName)
         val roomCategory: TextView = view.findViewById(R.id.roomCategory)
@@ -57,9 +57,6 @@ class RoomListAdapter(private val fragment: Fragment, private val roomList: Arra
 
         if((roomInfo.ownerHeadPic)?.startsWith("http://") == true){
             (roomInfo.ownerHeadPic) = (roomInfo.ownerHeadPic).replaceFirst("http://", "https://")
-        }
-        if((roomInfo.ownerPic)?.startsWith("http://") == true){
-            (roomInfo.ownerPic) = (roomInfo.ownerPic).replaceFirst("http://", "https://")
         }
         if((roomInfo.roomPic)?.startsWith("http://") == true){
             (roomInfo.roomPic) = (roomInfo.roomPic).replaceFirst("http://", "https://")
