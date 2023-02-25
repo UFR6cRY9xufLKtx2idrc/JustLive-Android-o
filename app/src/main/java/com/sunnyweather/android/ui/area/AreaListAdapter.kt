@@ -51,10 +51,11 @@ class AreaListAdapter(private val fragment: AreaSingleFragment, private val area
     override fun onBindViewHolder(holder: AreaListAdapter.ViewHolder, position: Int) {
         val areaInfo = areaList[position]
         holder.areaName.text = areaInfo.getString("areaName")
-        if((areaInfo.getString("areaPic"))?.startsWith("http://") == true){
-            (areaInfo.getString("areaPic")) = (areaInfo.getString("areaPic")).replaceFirst("http://", "https://")
+        var areaPic = areaInfo.getString("areaPic")
+        if(areaPic?.startsWith("http://") == true){
+            areaPic = areaPic.replaceFirst("http://", "https://")
         }
-        Glide.with(fragment).load(areaInfo.getString("areaPic")).transition(DrawableTransitionOptions.withCrossFade()).into(holder.areaPic)
+        Glide.with(fragment).load(areaPic).transition(DrawableTransitionOptions.withCrossFade()).into(holder.areaPic)
     }
 
     override fun getItemCount(): Int {
