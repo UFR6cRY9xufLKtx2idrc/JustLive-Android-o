@@ -68,7 +68,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private var controller: YJstandardController? = null
     private var videoView: VideoView? = null
     private var playerUrl: String = ""
-    private var rawUrl: String = ""
+    private var rawUrl: String? = ""
     private lateinit var mMyDanmakuView: MyDanmakuView
     private lateinit var danmuSetting: DanmuSetting
     private lateinit var sharedPref: SharedPreferences
@@ -82,8 +82,6 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private var isFirstGetInfo = true
     private val definitionArray = arrayOf("清晰", "流畅", "高清", "超清", "原画")
     private val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-
-    fun (rawUrl : String?)
 
     open fun getUrl(): String {
         return playerUrl;
