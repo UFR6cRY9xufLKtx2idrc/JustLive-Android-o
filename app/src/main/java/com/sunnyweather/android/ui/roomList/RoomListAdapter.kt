@@ -55,13 +55,22 @@ class RoomListAdapter(private val fragment: Fragment, private val roomList: Arra
         holder.liveNum.text = getWan(roomInfo.online)
         holder.roomName.text = roomInfo.roomName
 
+        if((roomInfo.ownerHeadPic)?.startsWith("http://") == true){
+            (roomInfo.ownerHeadPic) = (roomInfo.ownerHeadPic).replaceFirst("http://", "https://")
+        }
+        if((roomInfo.ownerPic)?.startsWith("http://") == true){
+            (roomInfo.ownerPic) = (roomInfo.ownerPic).replaceFirst("http://", "https://")
+        }
+        if((roomInfo.roomPic)?.startsWith("http://") == true){
+            (roomInfo.roomPic) = (roomInfo.roomPic).replaceFirst("http://", "https://")
+        }
+
         if (roomInfo.isLive == 1) {
             Glide.with(fragment).load(roomInfo.ownerHeadPic).transition(withCrossFade()).into(holder.ownerPic)
             Glide.with(fragment).load(roomInfo.roomPic).transition(withCrossFade()).into(holder.roomPic)
         } else {
-            holder.notLive.visibility = View.VISIBLE
-            //黑白图
-            Glide.with(fragment).load(roomInfo.ownerHeadPic).transforms(BlackWhiteTransformation()).transition(withCrossFade()).into(holder.ownerPic)
+            Glide.with(fragment).load(roomInfo.ownerHeadPic).transition(withCrossFade()).into(holder.ownerPic)
+            Glide.with(fragment).load(roomInfo.roomPic).transition(withCrossFade()).into(holder.roomPic)
         }
     }
 
