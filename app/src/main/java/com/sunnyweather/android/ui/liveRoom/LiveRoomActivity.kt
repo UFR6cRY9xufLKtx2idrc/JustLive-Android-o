@@ -83,6 +83,8 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
     private val definitionArray = arrayOf("清晰", "流畅", "高清", "超清", "原画")
     private val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
+    fun (rawUrl : String?)
+
     open fun getUrl(): String {
         return playerUrl;
     }
