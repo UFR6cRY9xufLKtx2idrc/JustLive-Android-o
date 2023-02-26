@@ -81,7 +81,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.11'
     implementation 'com.github.angcyo.DslTablayout:TabLayout:3.1.0'     //tabLayout动画
     implementation 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.1.0'    //tabLayout绑定viewPage
