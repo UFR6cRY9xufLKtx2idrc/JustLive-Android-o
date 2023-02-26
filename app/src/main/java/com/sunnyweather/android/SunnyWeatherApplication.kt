@@ -17,7 +17,7 @@ import xyz.doikki.videoplayer.exo.ExoMediaPlayerFactory
 
 class SunnyWeatherApplication : Application() {
     companion object {
-        lateinit var context: Context
+        lateinit var context: Context?
         var areaName = MutableLiveData<String>()
         var areaType = MutableLiveData<String>()
         var userInfo: UserInfo? = null
