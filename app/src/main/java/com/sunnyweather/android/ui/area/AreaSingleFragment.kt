@@ -36,7 +36,7 @@ class AreaSingleFragment(private val areaList: List<JSONObject>) : Fragment() {
         return inflater.inflate(R.layout.fragment_arealist, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle) {
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         var cardNum = ScreenUtils.getAppScreenWidth()/ ConvertUtils.dp2px(129F)
