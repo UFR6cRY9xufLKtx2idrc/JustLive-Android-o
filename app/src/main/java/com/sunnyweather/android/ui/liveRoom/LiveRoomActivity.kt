@@ -376,12 +376,14 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                     //未开播
                     if (roomInfo.isLive == 0) {
                         liveRoom_not_live.visibility = View.VISIBLE
-                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
+                        //点击播放器区域显示关注窗口
+                        liveRoom_not_live.setOnClickListener {
+                            changeRoomInfoVisible(roomInfo_liveRoom.layoutParams.height == 0)
+                        }
                         if (mPIPManager.isStartFloatWindow) {
                             mPIPManager.stopFloatWindow()
                             mMyDanmakuView.stopFloatPrepare()
                         }
-                        player_container.addView(videoView)
                     } else if (roomInfo.isLive == 1) {
                         videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
                         if (mPIPManager.isStartFloatWindow) {
@@ -396,12 +398,14 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             viewModel.getRealUrl(platform, roomId)
                         }
                     } else {
-                        videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
+                        //点击播放器区域显示关注窗口
+                        liveRoom_not_live.setOnClickListener {
+                            changeRoomInfoVisible(roomInfo_liveRoom.layoutParams.height == 0)
+                        }
                         if (mPIPManager.isStartFloatWindow) {
                             mPIPManager.stopFloatWindow()
                             mMyDanmakuView.stopFloatPrepare()
                         }
-                        player_container.addView(videoView)
                     }
                     if((roomInfo.ownerHeadPic)?.startsWith("http://") == true){
                         (roomInfo.ownerHeadPic) = (roomInfo.ownerHeadPic).replaceFirst("http://", "https://")
