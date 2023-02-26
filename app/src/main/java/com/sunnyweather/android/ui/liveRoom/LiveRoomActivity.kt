@@ -384,6 +384,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             mPIPManager.stopFloatWindow()
                             mMyDanmakuView.stopFloatPrepare()
                         }
+                        player_container.addView(videoView)
                     } else if (roomInfo.isLive == 1) {
                         videoView = VideoViewManager.instance().get(platform + roomId) as VideoView?
                         if (mPIPManager.isStartFloatWindow) {
@@ -406,6 +407,7 @@ class LiveRoomActivity : AppCompatActivity(), Utils.OnAppStatusChangedListener, 
                             mPIPManager.stopFloatWindow()
                             mMyDanmakuView.stopFloatPrepare()
                         }
+                        player_container.addView(videoView)
                     }
                     if((roomInfo.ownerHeadPic)?.startsWith("http://") == true){
                         (roomInfo.ownerHeadPic) = (roomInfo.ownerHeadPic).replaceFirst("http://", "https://")
