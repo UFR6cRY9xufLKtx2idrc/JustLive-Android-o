@@ -128,11 +128,11 @@ dependencies {
     } //刘强东brv
 //    implementation 'com.billy.android:smart-swipe:1.1.0' //侧滑插件
     // 基础依赖包，必须要依赖
-    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
     // fragment快速实现（可选）
-    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    implementation 'com.geyifeng.immersionbar:immersionbar-components:3.2.2'
     // kotlin扩展（可选）
-    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
