@@ -25,7 +25,7 @@ class AreaSingleFragment(private val areaList: List<JSONObject>) : Fragment() {
     constructor() : this(ArrayList<JSONObject>())
 
     private lateinit var mFragmentListener: FragmentListener
-    private lateinit var sharedPref: SharedPreferences?
+    private lateinit var sharedPref: SharedPreferences
 
     private lateinit var adapter: AreaListAdapter
     override fun onCreateView(
