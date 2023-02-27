@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 apply plugin: "kotlin-kapt"
 apply plugin: 'kotlin-android'
@@ -23,10 +24,6 @@ android {
 //        // Enables Jetpack Compose for this module
 //        compose true
 //    }
-
-    buildFeatures {
-        viewBinding = true
-    }
 
     buildTypes {
         release {
