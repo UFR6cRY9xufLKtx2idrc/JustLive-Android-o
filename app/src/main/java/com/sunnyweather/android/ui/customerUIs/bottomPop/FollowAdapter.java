@@ -25,10 +25,10 @@ public class FollowAdapter extends BaseQuickAdapter<RoomInfo, BaseViewHolder> {
      */
     @Override
     protected void convert(@NotNull BaseViewHolder helper, @NotNull RoomInfo item) {
-        var OwnerHeadPic = item.getOwnerHeadPic()
+        var OwnerHeadPic = item.getOwnerHeadPic();
         if(OwnerHeadPic?.startsWith("http://") == true){
-            OwnerHeadPic = OwnerHeadPic.replaceFirst("http://", "https://")
-        }
+            OwnerHeadPic = OwnerHeadPic.replaceFirst("http://", "https://");
+        };
         Glide.with(getContext()).load(OwnerHeadPic).transition(DrawableTransitionOptions.withCrossFade()).into((ImageView) helper.getView(R.id.profileImageIv));
         helper.setText(R.id.platform_search, SunnyWeatherApplication.Companion.platformName(item.getPlatForm()) + "·");
         helper.setText(R.id.usernameTv, item.getOwnerName());
