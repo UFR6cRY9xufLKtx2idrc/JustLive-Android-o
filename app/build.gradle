@@ -107,7 +107,7 @@ dependencies {
         exclude group: 'org.json', module: 'json' //provided by Android natively
     }
     implementation 'com.github.AlexLiuSheng:CheckVersionLib:2.4.1_androidx' //版本更新
-    implementation 'com.umeng.umsdk:apm:1.9.0' // 错误分析升级为独立SDK，看crash数据请一定集成，可选
+    implementation 'com.umeng.umsdk:apm:1.9.2' // 错误分析升级为独立SDK，看crash数据请一定集成，可选
     implementation 'com.github.getActivity:XXPermissions:16.6' //浮窗权限申请
     implementation 'com.blankj:utilcodex:1.31.1' //安卓常用工具
     implementation "com.mikepenz:materialdrawer:9.0.1" //抽屉
